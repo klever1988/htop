@@ -25,6 +25,7 @@ in the source distribution for its full text.
 #include "zfs/ZfsArcMeter.h"
 #include "zfs/ZfsCompressedArcMeter.h"
 #include "LinuxProcess.h"
+#include "CPUTempMeter.h"
 
 #include <math.h>
 #include <assert.h>
@@ -102,6 +103,7 @@ void Platform_setBindings(Htop_Action* keys) {
 
 MeterClass* Platform_meterTypes[] = {
    &CPUMeter_class,
+   &CPUTempMeter_class,
    &ClockMeter_class,
    &LoadAverageMeter_class,
    &LoadMeter_class,

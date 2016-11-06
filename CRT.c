@@ -38,6 +38,9 @@ in the source distribution for its full text.
 
 #define ColorPairGrayBlack ColorPair(Magenta,Magenta)
 #define ColorIndexGrayBlack ColorIndex(Magenta,Magenta)
+#define KEY_WHEELUP KEY_F(20)
+#define KEY_WHEELDOWN KEY_F(21)
+#define KEY_RECLICK KEY_F(22)
 
 const char *CRT_treeStrAscii[TREE_STR_COUNT] = {
    "-", // TREE_STR_HORZ
@@ -145,6 +148,9 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
       [ZFS_OTHER] = ColorPair(Magenta,Black),
       [ZFS_COMPRESSED] = ColorPair(Blue,Black),
       [ZFS_RATIO] = ColorPair(Magenta,Black),
+      [TEMPERATURE_COOL] = A_DIM | ColorPair(Green,Black),
+      [TEMPERATURE_MEDIUM] = A_NORMAL | ColorPair(Yellow,Black),
+      [TEMPERATURE_HOT] = A_BOLD | ColorPair(Red,Black),
    },
    [COLORSCHEME_MONOCHROME] = {
       [RESET_COLOR] = A_NORMAL,
@@ -215,6 +221,9 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
       [ZFS_OTHER] = A_DIM,
       [ZFS_COMPRESSED] = A_BOLD,
       [ZFS_RATIO] = A_BOLD,
+      [TEMPERATURE_COOL] = A_DIM,
+      [TEMPERATURE_MEDIUM] = A_NORMAL,
+      [TEMPERATURE_HOT] = A_BOLD,
    },
    [COLORSCHEME_BLACKONWHITE] = {
       [RESET_COLOR] = ColorPair(Black,White),
@@ -285,6 +294,9 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
       [ZFS_OTHER] = ColorPair(Magenta,White),
       [ZFS_COMPRESSED] = ColorPair(Cyan,White),
       [ZFS_RATIO] = ColorPair(Magenta,White),
+      [TEMPERATURE_COOL] = ColorPair(Green,White),
+      [TEMPERATURE_MEDIUM] = ColorPair(Yellow,White),
+      [TEMPERATURE_HOT] = ColorPair(Red,White),
    },
    [COLORSCHEME_LIGHTTERMINAL] = {
       [RESET_COLOR] = ColorPair(Black,Black),
@@ -355,6 +367,9 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
       [ZFS_OTHER] = A_BOLD | ColorPair(Magenta,Black),
       [ZFS_COMPRESSED] = ColorPair(Cyan,Black),
       [ZFS_RATIO] = A_BOLD | ColorPair(Magenta,Black),
+      [TEMPERATURE_COOL] = ColorPair(Green,Black),
+      [TEMPERATURE_MEDIUM] = ColorPair(Yellow,Black),
+      [TEMPERATURE_HOT] = ColorPair(Red,Black),
    },
    [COLORSCHEME_MIDNIGHT] = {
       [RESET_COLOR] = ColorPair(White,Blue),
@@ -425,6 +440,9 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
       [ZFS_OTHER] = A_BOLD | ColorPair(Magenta,Blue),
       [ZFS_COMPRESSED] = A_BOLD | ColorPair(White,Blue),
       [ZFS_RATIO] = A_BOLD | ColorPair(Magenta,Blue),
+      [TEMPERATURE_COOL] = A_DIM | ColorPair(Green,Blue),
+      [TEMPERATURE_MEDIUM] = A_NORMAL | ColorPair(Yellow,Blue),
+      [TEMPERATURE_HOT] = A_BOLD | ColorPair(Red,Blue),
    },
    [COLORSCHEME_BLACKNIGHT] = {
       [RESET_COLOR] = ColorPair(Cyan,Black),
@@ -495,6 +513,9 @@ int CRT_colorSchemes[LAST_COLORSCHEME][LAST_COLORELEMENT] = {
       [ZFS_OTHER] = ColorPair(Magenta,Black),
       [ZFS_COMPRESSED] = ColorPair(Blue,Black),
       [ZFS_RATIO] = ColorPair(Magenta,Black),
+      [TEMPERATURE_COOL] = A_DIM | ColorPair(Green,Black),
+      [TEMPERATURE_MEDIUM] = A_NORMAL | ColorPair(Yellow,Black),
+      [TEMPERATURE_HOT] = A_BOLD | ColorPair(Red,Black),
    },
    [COLORSCHEME_BROKENGRAY] = { 0 } // dynamically generated.
 };
